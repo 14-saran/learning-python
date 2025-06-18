@@ -1,6 +1,6 @@
 
 # Learning Python
-ดูตัวอย่าง code ได้ที่ [Github](https://github.com/14-saran/learn-python.git)
+ดูตัวอย่าง code ได้ที่ [Github](https://github.com/14-saran/learning-python.git)
 
 ## Table of Contents
 - [Python Basics](#python-basics)
