@@ -1,0 +1,6 @@
+INFO:root:Running 'add' wiht argument (3, 3)
+INFO:root:Running 'subtract' wiht argument (8, 3)
+INFO:root:Running 'add' wiht argument (3, 3)
+INFO:root:Running 'add' wiht argument (4, 5)
+INFO:root:Running 'sub' wiht argument (8, 3)
+INFO:root:Running 'sub' wiht argument (10, 3)
