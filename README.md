@@ -184,17 +184,68 @@ print(cube(3))
 ```
 
 ### Decorators Basics and Applications
--
+- `Decorators` เป็น function ที่ขยายbehavior ของfunctionอื่น โดยไม่ต้องแก้ไข base function  
+ใช้โดยใช้โดยส่งfunctionเดิมเข้าไปเป็น argument ให้กับ decorator  
+ `wrapper` ช่วยเพิ่มคำสั่งก่อนและหลังการทำงานของmain functionโดยไม่ต้องแก้ code ของmain function
 
-### Generator Functions with Yield
-- 
+```python
+def add_sprinkles(func):
+    def wrapper(*args, **kwargs):
+        print("*you add sprinkles*")
+        func(*args, **kwargs)
+    return wrapper
+
+def add_fudge(func):
+    def wrapper(*args, **kwargs):
+        print("'*you add fudge*'")
+        func(*args, **kwargs)
+    return wrapper
+
+
+@add_sprinkles
+@add_fudge
+def get_ice_cream(flavor):
+    print(f"Here is your {flavor} ice cream")
+
+get_ice_cream("matcha")
+```
+
+## Generator Functions with Yield
+
+### gennerators / yield
+- ไม่คืนค่าครั้งเดียวทั้งหมดแบบ return แต่จะส่งคืนทีละรอบ และเวลาเรียกต้องใช้ next
+
+```python
+def Konthai():
+    yield "KIN"
+    yield "Kwoa"
+    yield "Young"
+    yield "Jahhh"
+
+s = Konthai()
+print(s)
+print(next(s))
+print(next(s))
+print(next(s))
+print(next(s))
+```
 
 ---
 
 ## Object-Oriented Programming (OOP)
 
 ### Class, __init__, Method, Attributes
--
+- `class` : ต้นแบบของ object ที่เราจะสร้าง
+-  `__init__` : จะทำงานเมื่อ objectนั้นถูกส้รางโดย class
+- `method` :  ฟังก์ชันที่เขียนอยู่ใน class ให้โชว์behaviorอะไร
+- `Attributes` : เป็นตัวแปร (variable) ทำหน้าที่เก็บข้อมูล ที่อยู่ใน class หรือ object 
+
+    - encapsulation > กำหนดระดับการเข้าถึงข้อมูล
+                    > ' ' ,_,__ :
+    - abstraction >  การสร้างฟอร์ม ไว้ก่อน แต่ยังไม่บอกว่าจะทำงานยังไง ต้อง import ABC,abstractmethod มาใช้ด้วย เรียกใช้โดยการ @abstracmethod           
+    - inheritance > การสืบทอด main class โดยการใส่(ชื่อคาสแม่) ที่คลาสลูก
+    - polymorphism >การสร้างfunctionในclassลูกให้เหมือน class แม่ (เขีบยทับลงไปใหม่)
+
 
 ### Inheritance, Polymorphism, super()
 -
