@@ -248,7 +248,11 @@ print(next(s))
 
 
 ### Inheritance, Polymorphism, super()
--
+- `Polymorphism`
+    - duck typing
+    - operator overloading
+    - method overloading
+    - method overring
 
 ---
 
