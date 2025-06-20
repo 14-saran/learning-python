@@ -239,21 +239,18 @@ print(next(s))
 -  `__init__` : จะทำงานเมื่อ objectนั้นถูกส้รางโดย class
 - `method` :  ฟังก์ชันที่เขียนอยู่ใน class ให้โชว์behaviorอะไร
 - `Attributes` : เป็นตัวแปร (variable) ทำหน้าที่เก็บข้อมูล ที่อยู่ใน class หรือ object 
-
+- `super`: เข้าถึง คุณสมบัติทั้งหมดในmain class
     - encapsulation > กำหนดระดับการเข้าถึงข้อมูล
                     > ' ' ,_,__ :
     - abstraction >  การสร้างฟอร์ม ไว้ก่อน แต่ยังไม่บอกว่าจะทำงานยังไง ต้อง import ABC,abstractmethod มาใช้ด้วย เรียกใช้โดยการ @abstracmethod           
     - inheritance > การสืบทอด main class โดยการใส่(ชื่อคาสแม่) ที่คลาสลูก
-    - polymorphism >การสร้างfunctionในclassลูกให้เหมือน class แม่ (เขีบยทับลงไปใหม่)
-
-
-### Inheritance, Polymorphism, super()
-- `Polymorphism`
-    - duck typing
-    - operator overloading
-    - method overloading
-    - method overring
-
+    - `Polymorphism`
+    
+|                      |                                                  |
+|----------------------|--------------------------------------------------|
+| Method Overloading    |method ที่ทำงานแบบเดียวกัน แต่มี parameter ที่ใช้แตกต่างกัน หรือ รับพารามิเตอร์ได้หลายแบบ|
+| Method Overriding     | class ลูก เปลี่ยน behavior ของ method แม่        |
+| Operator Overloading  | ทำให้ใช้ `+`, `-`, `*` ฯลฯ กับ object ที่เราสร้างเอง |
 ---
 
 ## SQLite & Web Scraping
