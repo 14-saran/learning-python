@@ -256,16 +256,26 @@ print(next(s))
 ## SQLite & Web Scraping
 
 ### Working with sqlite3
--
+- เป็นการจัดการ database ในแบบต่างๆ โดยจะต้อง import database เข้ามาเพื่อปรับแต่งด้วยคำสั่ง เช่น  
+    - CREATE TABLE 
+    - INSERT
+    - SELECT
+    - UPDATE
+    - DELETE  
+**ดูตัวอย่างได้ที่ floder 008_SQLite > sqlite3
 
 ### Web Scraping Using BeautifulSoup
--
+- นำข้อมูลจากข้อมูล html จากweb ดึงข้อมูลที่ต้องการออกมาเก็บหรือใช้งาน ไม่ต้องหาหรือcopyข้อมูลเยอะๆ ป้องกันการตกหล่นของข้อมูล  
+**ดูตัวอย่างได้ที่ floder 008_SQLite > web_scraping
 
 ---
 
 ## Concurrent Programming
-
 ### Multithreading
+-ทำfunctions หลายๆอันทำงานพร้อมกันได้ ทำให้ใช้เวลาสั้นลง
+จากเดิมที่ทำงานตามลำดับ
+
+
 
 
 ### Multiprocessing and Async Basics
