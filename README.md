@@ -265,28 +265,71 @@ print(next(s))
 **ดูตัวอย่างได้ที่ floder 008_SQLite > sqlite3
 
 ### Web Scraping Using BeautifulSoup
-- นำข้อมูลจากข้อมูล html จากweb ดึงข้อมูลที่ต้องการออกมาเก็บหรือใช้งาน ไม่ต้องหาหรือcopyข้อมูลเยอะๆ ป้องกันการตกหล่นของข้อมูล  
+> นำข้อมูลจากข้อมูล html จากweb ดึงข้อมูลที่ต้องการออกมาเก็บหรือใช้งาน ไม่ต้องหาหรือcopyข้อมูลเยอะๆ ป้องกันการตกหล่นของข้อมูล  
+
 **ดูตัวอย่างได้ที่ floder 008_SQLite > web_scraping
 
 ---
 
 ## Concurrent Programming
 ### Multithreading
--ทำfunctions หลายๆอันทำงานพร้อมกันได้ ทำให้ใช้เวลาสั้นลง
+>ทำfunctions หลายๆอันทำงานพร้อมกันได้ ทำให้ใช้เวลาสั้นลง
 จากเดิมที่ทำงานตามลำดับ
 
 
-
-
 ### Multiprocessing and Async Basics
+- `Multiprocessing` เป็นการทำงานที่หลาย process แยกหน่วยประมวลผล (CPU core) เพื่อทำงานพร้อมกัน
 
+```python
+import multiprocessing
+import time
 
+def slow_function(name):
+    print(f"Start {name}")
+    time.sleep(3)
+    print(f"End {name}")
+
+if __name__ == '__main__':
+    p1 = multiprocessing.Process(target=slow_function, args=('Task A',))
+    p2 = multiprocessing.Process(target=slow_function, args=('Task B',))
+
+    p1.start()
+    p2.start()
+
+    p1.join()
+    p2.join()
+
+    print("Both tasks done.")
+```
+ โดย 2 งานรันพร้อมกัน ใช้เวลา ~3 วินาทีแทนที่จะเป็น ~6 วินาที
+
+- `Async` เป็นการทำงานแบบไม่ประสานเวลา (non-blocking) ใน process เดียว  
+> ทำงานหลายอย่าง สลับไปสลับมา ถ้าต้องรองานนึงให้เสร็จก่อน สามารถไปทำงานอื่นได้ระหว่างรอได้
+
+```python
+import asyncio
+
+async def func(): pass
+
+# เรียกหลาย async function พร้อมกัน
+await asyncio.gather(func1(), func2())
+
+# รัน async function หลัก
+asyncio.run(main())
+```
 ---
 
 ## DateTime & Python Tips
-
+**ดูตัวอย่างเพิ่มเติมที่ไฟล์ 010_Time&Trick
 ### datetime, timedelta, strftime
 
+- `datetime`: ใช้เพื่อดูวันเวลาขณะนั้น หรือแปลงวันเวลาจาก string
+- `timedelta`: ใช้บวก/ลบ วันหรือเวลา
+- `strftime`: แปลงวันเวลาให้อยู่ในรูปแบบ string
 
-### Python Tricks: Unpacking, Ternary, F-String, Walrus
+### Python Tricks: 
+- `unpacking` : แตก list/tuple มาใส่ในlistใหม่ หลายตัวแปรในครั้งเดียว
+- `ternary` : เขียนfunction if-else ในบรรทัดเดียว
+- `walrus oper` : 	กำหนดค่าและใช้ใน if/while ได้เลยในบรรทัดเดียว
+
 

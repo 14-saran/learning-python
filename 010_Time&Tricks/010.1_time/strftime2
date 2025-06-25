@@ -1,0 +1,19 @@
+import datetime
+from datetime import timedelta
+
+date_string = "25 December , 2020"
+FormatDateString = datetime.datetime.strptime(date_string, "%d %B , %Y")
+print(FormatDateString)
+
+
+
+now = datetime.datetime.now() 
+year = now.strftime("%Y")
+print(year)
+print(date_string)
+print(now)
+
+# strftime : It can handle only datetime object
+# strftime : It can handle only str object for the datetime
+
+
